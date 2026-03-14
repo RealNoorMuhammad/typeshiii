@@ -74,9 +74,9 @@
   88% { opacity: 0; transform: translate(0, 0); }
 }
 
-/* Falling $SHII background — dim over hero, light & visible below */
+/* Falling $SHII background — hero section only */
 .ts-falling-shii {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
@@ -84,21 +84,15 @@
   mask-image: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(0, 0, 0, 0.08) 25%,
-    rgba(0, 0, 0, 0.35) 42%,
-    black 50%,
-    black 88%,
-    rgba(0, 0, 0, 0.4) 96%,
+    black 15%,
+    black 85%,
     transparent 100%
   );
   -webkit-mask-image: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(0, 0, 0, 0.08) 25%,
-    rgba(0, 0, 0, 0.35) 42%,
-    black 50%,
-    black 88%,
-    rgba(0, 0, 0, 0.4) 96%,
+    black 15%,
+    black 85%,
     transparent 100%
   );
 }

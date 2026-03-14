@@ -57,10 +57,10 @@ function XLogo({ className }) {
 function SonUpload() {
   return (
     <div className="ts-page">
-      <FallingShiiBackground />
       <div className="ts-scanline" aria-hidden="true" />
       <main className="ts-main">
         <section className="ts-hero" id="top">
+          <FallingShiiBackground />
           <div className="ts-hero-media" aria-hidden="true" />
           <div className="ts-hero-overlay" aria-hidden="true" />
 
