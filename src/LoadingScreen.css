@@ -1,0 +1,142 @@
+/* Loading screen — Terminal / Hacking boot sequence */
+.loader-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 800px;
+  background: #0a0a0c;
+}
+
+.loader-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(201, 162, 39, 0.03) 0%, transparent 60%),
+    linear-gradient(180deg, #0a0a0c 0%, #08080a 100%);
+  pointer-events: none;
+}
+
+.loader-wrap-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201, 162, 39, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 162, 39, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.loader-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+.loader-title {
+  margin: 0;
+  font-family: "JetBrains Mono", "Share Tech Mono", "Orbitron", monospace;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 10vw, 6rem);
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.loader-letter {
+  display: inline-block;
+  color: #c9a227;
+  text-shadow:
+    0 0 10px rgba(201, 162, 39, 0.5),
+    0 0 30px rgba(201, 162, 39, 0.3),
+    0 0 60px rgba(201, 162, 39, 0.15);
+  animation: loader-letter-pulse 2s ease-in-out infinite;
+}
+
+.loader-letter:nth-child(1) { animation-delay: 0s; }
+.loader-letter:nth-child(2) { animation-delay: 0.05s; }
+.loader-letter:nth-child(3) { animation-delay: 0.1s; }
+.loader-letter:nth-child(4) { animation-delay: 0.15s; }
+.loader-letter:nth-child(5) { animation-delay: 0.2s; }
+.loader-letter:nth-child(6) { animation-delay: 0.25s; }
+.loader-letter:nth-child(7) { animation-delay: 0.3s; }
+.loader-letter:nth-child(8) { animation-delay: 0.35s; }
+
+@keyframes loader-letter-pulse {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(201, 162, 39, 0.5), 0 0 30px rgba(201, 162, 39, 0.3), 0 0 60px rgba(201, 162, 39, 0.15);
+  }
+  50% {
+    opacity: 0.85;
+    text-shadow: 0 0 20px rgba(201, 162, 39, 0.55), 0 0 50px rgba(201, 162, 39, 0.3), 0 0 80px rgba(201, 162, 39, 0.2);
+  }
+}
+
+.loader-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  max-width: 680px;
+  height: 90%;
+  max-height: 320px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center,
+    rgba(201, 162, 39, 0.06) 0%,
+    rgba(201, 162, 39, 0.02) 40%,
+    transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.loader-shine {
+  width: 100%;
+  max-width: 420px;
+  height: 2px;
+  margin-top: 0.5em;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(201, 162, 39, 0.2) 20%,
+    rgba(201, 162, 39, 0.5) 50%,
+    rgba(201, 162, 39, 0.2) 80%,
+    transparent 100%);
+  transform-origin: center center;
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(201, 162, 39, 0.3);
+  flex-shrink: 0;
+}
+
+.loader-prompt {
+  margin-top: 0.6em;
+  font-family: "JetBrains Mono", "Share Tech Mono", monospace;
+  font-size: clamp(0.7rem, 2vw, 0.85rem);
+  color: rgba(232, 228, 220, 0.6);
+  letter-spacing: 0.15em;
+}
+
+.loader-cursor {
+  display: inline-block;
+  width: 0.4em;
+  height: 1em;
+  background: #c9a227;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: loader-blink 0.8s step-end infinite;
+  box-shadow: 0 0 10px rgba(201, 162, 39, 0.4);
+}
+
+@keyframes loader-blink {
+  50% { opacity: 0; }
+}
