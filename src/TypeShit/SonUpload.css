@@ -16,6 +16,11 @@
   --ts-red: #b33a3a;
   --ts-glow: 0 0 24px rgba(201, 162, 39, 0.15);
   --ts-glow-strong: 0 0 40px rgba(201, 162, 39, 0.2);
+  /* Royal crystal theme (below hero) */
+  --ts-crystal-glow: 0 0 30px rgba(212, 175, 55, 0.2), 0 0 60px rgba(180, 220, 255, 0.06);
+  --ts-crystal-border: linear-gradient(135deg, rgba(212, 175, 55, 0.4), rgba(180, 220, 255, 0.15), rgba(232, 228, 220, 0.2), rgba(212, 175, 55, 0.35));
+  --ts-crystal-bg: linear-gradient(165deg, rgba(18, 18, 26, 0.97) 0%, rgba(14, 14, 22, 0.98) 50%, rgba(10, 10, 14, 0.99) 100%);
+  --ts-crystal-heading-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 0 0 40px rgba(212, 175, 55, 0.15), 0 0 60px rgba(180, 220, 255, 0.08);
 }
 
 .ts-crystal-heading {
@@ -375,7 +380,43 @@
   color: var(--ts-muted);
 }
 
-/* Hero divider — terminal style */
+/* Straight line divider between sections — gangster vibe */
+.ts-section-divider {
+  width: 100%;
+  height: 0;
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 5;
+}
+
+/* Main bar: thick straight gold line */
+.ts-section-divider::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: rgba(212, 175, 55, 0.85);
+  box-shadow:
+    0 1px 0 0 rgba(0, 0, 0, 0.9),
+    0 2px 4px 0 rgba(0, 0, 0, 0.6),
+    0 0 16px rgba(212, 175, 55, 0.3);
+}
+
+/* Thin highlight on top — blade edge */
+.ts-section-divider::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 250, 230, 0.5) 20%, rgba(255, 250, 230, 0.7) 50%, rgba(255, 250, 230, 0.5) 80%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Hero divider — crystal / royal */
 .ts-hero-divider {
   position: relative;
   z-index: 5;
@@ -386,6 +427,7 @@
   padding: 2rem 1.5rem;
   margin: 0 auto;
   max-width: 1120px;
+  background: linear-gradient(180deg, transparent 0%, rgba(212, 175, 55, 0.03) 50%, transparent 100%);
 }
 
 .ts-divider-line {
@@ -394,35 +436,37 @@
   height: 1px;
   background: linear-gradient(90deg,
     transparent 0%,
-    rgba(201, 162, 39, 0.12) 20%,
-    rgba(201, 162, 39, 0.35) 50%,
-    rgba(201, 162, 39, 0.12) 80%,
+    rgba(212, 175, 55, 0.15) 25%,
+    rgba(212, 175, 55, 0.5) 50%,
+    rgba(180, 220, 255, 0.2) 50%,
+    rgba(212, 175, 55, 0.15) 75%,
     transparent 100%);
-  box-shadow: 0 0 15px rgba(201, 162, 39, 0.22);
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.25), 0 0 30px rgba(180, 220, 255, 0.08);
 }
 
 .ts-divider-diamond {
   width: 8px;
   height: 8px;
   transform: rotate(45deg);
-  background: var(--ts-gold);
-  border: 1px solid var(--ts-gold);
-  box-shadow: 0 0 20px rgba(201, 162, 39, 0.3);
+  background: linear-gradient(135deg, var(--ts-gold-bright), var(--ts-gold));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5), 0 0 40px rgba(212, 175, 55, 0.2);
   flex-shrink: 0;
 }
 
-/* Marquee — data stream */
+/* Marquee — crystal royal entrance */
 .ts-marquee-wrap {
   position: relative;
   z-index: 5;
   overflow: hidden;
   padding: 1.25rem 0;
-  border-top: 1px solid var(--ts-border);
-  border-bottom: 1px solid var(--ts-border);
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
   background: linear-gradient(180deg,
-    rgba(201, 162, 39, 0.03) 0%,
-    transparent 50%,
-    rgba(201, 162, 39, 0.03) 100%);
+    rgba(212, 175, 55, 0.05) 0%,
+    rgba(180, 220, 255, 0.02) 50%,
+    rgba(212, 175, 55, 0.04) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .ts-marquee-item {
@@ -470,14 +514,14 @@
   font-size: 0.85rem;
 }
 
-/* Code / binary ticker — psyop vibe */
+/* Code / binary ticker — crystal strip */
 .ts-code-ticker-wrap {
   position: relative;
   z-index: 5;
   padding: 2rem 1.5rem;
-  border-top: 1px solid var(--ts-border);
-  border-bottom: 1px solid var(--ts-border);
-  background: rgba(201, 162, 39, 0.02);
+  border-top: 1px solid rgba(212, 175, 55, 0.12);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.03) 0%, rgba(18, 18, 26, 0.6) 50%, rgba(212, 175, 55, 0.02) 100%);
   overflow: hidden;
 }
 
@@ -535,22 +579,33 @@
 .ts-cap-card {
   padding: 1.75rem 1.25rem;
   border-radius: 0;
-  background: var(--ts-bg-card);
-  border: 1px solid var(--ts-border);
+  background: linear-gradient(165deg, rgba(22, 21, 29, 0.9) 0%, rgba(18, 18, 26, 0.95) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.04);
   text-align: center;
-  transition: all 0.25s ease;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ts-cap-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, transparent 40%, rgba(180, 220, 255, 0.02) 100%);
+  pointer-events: none;
 }
 
 .ts-cap-card:hover {
-  border-color: var(--ts-border-strong);
-  box-shadow: 0 0 35px rgba(201, 162, 39, 0.12);
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: var(--ts-crystal-glow), 0 0 40px rgba(212, 175, 55, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .ts-cap-icon {
   display: block;
   font-size: 1.75rem;
   margin-bottom: 0.75rem;
-  filter: grayscale(0.3);
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
 }
 
 .ts-cap-card h3 {
@@ -580,15 +635,17 @@
 .ts-manifesto-block {
   padding: 1.75rem 1.5rem;
   border-left: 3px solid var(--ts-gold);
-  background: var(--ts-bg-card);
-  border: 1px solid var(--ts-border);
-  border-left: 3px solid var(--ts-gold);
-  transition: all 0.25s ease;
+  background: linear-gradient(165deg, rgba(22, 21, 29, 0.88) 0%, rgba(18, 18, 26, 0.94) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-left: 3px solid var(--ts-gold-bright);
+  box-shadow: 0 0 28px rgba(212, 175, 55, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  transition: all 0.35s ease;
+  position: relative;
 }
 
 .ts-manifesto-block:hover {
-  border-color: var(--ts-border-strong);
-  box-shadow: 0 0 30px rgba(201, 162, 39, 0.08);
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: var(--ts-crystal-glow), 0 0 35px rgba(212, 175, 55, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .ts-manifesto-block h3 {
@@ -613,9 +670,9 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--ts-gold);
+  color: var(--ts-gold-bright);
   margin: 0;
-  text-shadow: 0 0 20px rgba(201, 162, 39, 0.22);
+  text-shadow: var(--ts-crystal-heading-shadow);
 }
 
 /* Operation timeline */
@@ -628,19 +685,21 @@
 .ts-timeline-card {
   padding: 1.5rem 1.25rem;
   border-radius: 0;
-  background: var(--ts-bg-card);
-  border: 1px solid var(--ts-border);
-  transition: all 0.25s ease;
+  background: linear-gradient(165deg, rgba(22, 21, 29, 0.9) 0%, rgba(18, 18, 26, 0.95) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  box-shadow: 0 0 22px rgba(212, 175, 55, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  transition: all 0.35s ease;
+  position: relative;
 }
 
 .ts-timeline-card:hover {
-  border-color: var(--ts-border-strong);
-  box-shadow: 0 0 30px rgba(201, 162, 39, 0.1);
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: var(--ts-crystal-glow), 0 0 35px rgba(212, 175, 55, 0.12);
 }
 
 .ts-timeline-ongoing {
-  border-color: rgba(201, 162, 39, 0.25);
-  box-shadow: 0 0 20px rgba(201, 162, 39, 0.06);
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.08), 0 0 50px rgba(180, 220, 255, 0.04);
 }
 
 .ts-timeline-badge {
@@ -680,14 +739,17 @@
 .ts-roadmap-phase {
   padding: 1.5rem 1.75rem;
   border-radius: 0;
-  background: var(--ts-bg-card);
-  border: 1px solid var(--ts-border);
+  background: linear-gradient(165deg, rgba(22, 21, 29, 0.88) 0%, rgba(18, 18, 26, 0.94) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.15);
   border-left: 4px solid var(--ts-muted);
-  transition: all 0.25s ease;
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  transition: all 0.35s ease;
+  position: relative;
 }
 
 .ts-roadmap-phase:hover {
-  border-color: var(--ts-border-strong);
+  border-color: rgba(212, 175, 55, 0.28);
+  box-shadow: var(--ts-crystal-glow), 0 0 30px rgba(212, 175, 55, 0.1);
 }
 
 .ts-roadmap-done {
@@ -744,9 +806,9 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--ts-gold);
+  color: var(--ts-gold-bright);
   margin: 0;
-  text-shadow: 0 0 20px rgba(201, 162, 39, 0.22);
+  text-shadow: var(--ts-crystal-heading-shadow);
 }
 
 /* Gallery */
@@ -773,10 +835,10 @@
   height: 100%;
   border-radius: 0;
   overflow: hidden;
-  background: var(--ts-bg-card);
-  border: 1px solid var(--ts-border);
-  box-shadow: 0 0 20px rgba(201, 162, 39, 0.06), inset 0 0 40px rgba(201, 162, 39, 0.02);
-  transition: all 0.3s ease;
+  background: linear-gradient(165deg, rgba(22, 21, 29, 0.95) 0%, rgba(18, 18, 26, 0.98) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow: 0 0 28px rgba(212, 175, 55, 0.08), inset 0 0 40px rgba(212, 175, 55, 0.02), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: all 0.35s ease;
 }
 
 .ts-gallery-facet::before {
@@ -800,8 +862,8 @@
 }
 
 .ts-gallery-item:hover .ts-gallery-facet {
-  border-color: var(--ts-border-strong);
-  box-shadow: 0 0 40px rgba(201, 162, 39, 0.15), inset 0 0 60px rgba(201, 162, 39, 0.04);
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: var(--ts-crystal-glow), 0 0 45px rgba(212, 175, 55, 0.18), inset 0 0 60px rgba(212, 175, 55, 0.04);
   transform: scale(1.02);
 }
 
@@ -819,19 +881,30 @@
   }
 }
 
-/* Sections */
+/* Sections — royal crystal theme below hero */
 .ts-section {
   position: relative;
   z-index: 1;
   max-width: 1120px;
   margin: 0 auto;
   padding: 4.5rem 1.5rem;
+  background: radial-gradient(ellipse 120% 80% at 50% 0%, rgba(212, 175, 55, 0.04) 0%, transparent 55%);
 }
 
 .ts-section-alt {
-  background: linear-gradient(180deg, rgba(18, 18, 26, 0.95) 0%, rgba(10, 10, 12, 0.98) 100%);
-  border-top: 1px solid var(--ts-border);
-  border-bottom: 1px solid var(--ts-border);
+  background: var(--ts-crystal-bg);
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  box-shadow: var(--ts-crystal-glow), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  position: relative;
+}
+
+.ts-section-alt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.025) 0%, transparent 18%, transparent 82%, rgba(0, 0, 0, 0.02) 100%);
+  pointer-events: none;
 }
 
 #tokenomics.ts-section-alt {
@@ -890,8 +963,8 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-family: "Orbitron", "JetBrains Mono", monospace;
-  color: var(--ts-gold);
-  text-shadow: 0 0 20px rgba(201, 162, 39, 0.28);
+  color: var(--ts-gold-bright);
+  text-shadow: var(--ts-crystal-heading-shadow);
   animation: ts-heading-glitch 12s ease-in-out infinite;
 }
 
@@ -919,15 +992,16 @@
 .ts-token-card {
   padding: 1.9rem 1.6rem;
   border-radius: 0;
-  background: var(--ts-bg-card);
-  border: 1px solid var(--ts-border);
-  box-shadow: 0 0 30px rgba(201, 162, 39, 0.06);
-  transition: all 0.25s ease;
+  background: linear-gradient(165deg, rgba(22, 21, 29, 0.92) 0%, rgba(18, 18, 26, 0.96) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: all 0.35s ease;
+  position: relative;
 }
 
 .ts-token-card:hover {
-  border-color: var(--ts-border-strong);
-  box-shadow: 0 0 40px rgba(201, 162, 39, 0.12);
+  border-color: rgba(212, 175, 55, 0.38);
+  box-shadow: var(--ts-crystal-glow), 0 0 45px rgba(212, 175, 39, 0.14);
 }
 
 .ts-token-card h3 {
@@ -979,15 +1053,17 @@
 .ts-step {
   padding: 1.8rem 1.6rem;
   border-radius: 0;
-  background: var(--ts-bg-card);
-  border: 1px solid var(--ts-border);
-  border-left: 3px solid var(--ts-gold);
-  transition: all 0.25s ease;
+  background: linear-gradient(165deg, rgba(22, 21, 29, 0.9) 0%, rgba(18, 18, 26, 0.95) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-left: 3px solid var(--ts-gold-bright);
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  transition: all 0.35s ease;
+  position: relative;
 }
 
 .ts-step:hover {
-  border-color: var(--ts-border-strong);
-  box-shadow: 0 0 30px rgba(201, 162, 39, 0.1);
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: var(--ts-crystal-glow), 0 0 35px rgba(212, 175, 55, 0.12);
 }
 
 .ts-step-index {
@@ -1028,16 +1104,17 @@
   width: 100%;
   padding: 2rem 2rem;
   border-radius: 0;
-  background: var(--ts-bg-card);
-  border: 1px solid var(--ts-border);
-  box-shadow: 0 0 30px rgba(201, 162, 39, 0.06);
-  transition: all 0.25s ease;
+  background: linear-gradient(165deg, rgba(22, 21, 29, 0.9) 0%, rgba(18, 18, 26, 0.95) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 0 28px rgba(212, 175, 55, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: all 0.35s ease;
   text-align: center;
+  position: relative;
 }
 
 .ts-community-card:hover {
-  border-color: var(--ts-border-strong);
-  box-shadow: 0 0 40px rgba(201, 162, 39, 0.12);
+  border-color: rgba(212, 175, 55, 0.38);
+  box-shadow: var(--ts-crystal-glow), 0 0 42px rgba(212, 175, 55, 0.14);
 }
 
 .ts-community-card h3 {
@@ -1100,13 +1177,14 @@
   box-shadow: 0 0 20px rgba(201, 162, 39, 0.15);
 }
 
-/* Footer */
+/* Footer — royal crystal */
 .ts-footer {
   position: relative;
   z-index: 1;
-  border-top: 1px solid var(--ts-border);
-  background: rgba(5, 8, 5, 0.98);
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  background: linear-gradient(180deg, rgba(14, 14, 20, 0.98) 0%, rgba(10, 10, 12, 0.99) 100%);
   padding: 1.4rem 1.5rem 1.8rem;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.02), inset 0 1px 0 rgba(212, 175, 55, 0.06);
 }
 
 .ts-footer-inner {

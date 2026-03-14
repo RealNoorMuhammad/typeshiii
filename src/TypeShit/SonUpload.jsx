@@ -132,8 +132,22 @@ function SonUpload() {
           </Marquee>
         </div>
 
-        {/* Code / binary ticker — psyop vibe */}
-     
+        <div className="ts-section-divider" aria-hidden="true" />
+
+        <div className="ts-code-ticker-wrap">
+          <div className="ts-code-ticker-inner">
+            <p className="ts-code-line">while(sleeping) &#123; type_faster(); &#125;</p>
+            <p className="ts-code-line">for(degen in alley) &#123; send_shii(degen); &#125;</p>
+            <p className="ts-code-line">burn(fiat);</p>
+            <p className="ts-code-line">for(degen in alley) &#123; send_shii(degen); &#125;</p>
+          </div>
+          <div className="ts-binary-ticker" aria-hidden="true">
+            <span className="ts-binary-chunk">01010100 01111001 01110000 01100101 01010011 01101000 01101001 01101001</span>
+            <span className="ts-binary-chunk" aria-hidden="true">01010100 01111001 01110000 01100101 01010011 01101000 01101001 01101001</span>
+          </div>
+        </div>
+
+        <div className="ts-section-divider" aria-hidden="true" />
 
         <section id="capabilities" className="ts-section ts-section-alt">
           <div className="ts-section-header">
@@ -164,6 +178,8 @@ function SonUpload() {
           </div>
         </section>
 
+        <div className="ts-section-divider" aria-hidden="true" />
+
         <section id="manifesto" className="ts-section">
           <div className="ts-section-header">
             <h2>The TypeShii Manifesto</h2>
@@ -186,34 +202,7 @@ function SonUpload() {
           <p className="ts-manifesto-cta">The choice is yours. Type slow or type Shii.</p>
         </section>
 
-        <section id="timeline" className="ts-section ts-section-alt">
-          <div className="ts-section-header">
-            <h2>Operation Timeline</h2>
-            <p>Missions completed. More incoming.</p>
-          </div>
-          <div className="ts-timeline-grid">
-            <div className="ts-timeline-card">
-              <span className="ts-timeline-badge">PHASE 1</span>
-              <h3>Operation Alley</h3>
-              <p>First wave deployed. Alley assembled. Vibes secured.</p>
-            </div>
-            <div className="ts-timeline-card">
-              <span className="ts-timeline-badge">PHASE 2</span>
-              <h3>Operation Signal</h3>
-              <p>Channels live. Memes deployed. Volume rising.</p>
-            </div>
-            <div className="ts-timeline-card">
-              <span className="ts-timeline-badge">PHASE 3</span>
-              <h3>Operation Chaos</h3>
-              <p>Glitches detected. They're watching. We're typing.</p>
-            </div>
-            <div className="ts-timeline-card ts-timeline-ongoing">
-              <span className="ts-timeline-badge">ONGOING</span>
-              <h3>Operation Shii</h3>
-              <p>Final phase. Status: unclassified. Stay tuned.</p>
-            </div>
-          </div>
-        </section>
+        <div className="ts-section-divider" aria-hidden="true" />
 
         <section id="roadmap" className="ts-section">
           <div className="ts-section-header">
@@ -265,6 +254,8 @@ function SonUpload() {
           <p className="ts-roadmap-tagline">The alley is inevitable. Type Shii.</p>
         </section>
 
+        <div className="ts-section-divider" aria-hidden="true" />
+
         <section id="gallery" className="ts-section ts-section-alt ts-gallery">
           <div className="ts-section-header">
             <h2>Gallery</h2>
@@ -290,6 +281,8 @@ function SonUpload() {
           </div>
         </section>
 
+        <div className="ts-section-divider" aria-hidden="true" />
+
         <section id="tokenomics" className="ts-section ts-section-alt">
           <div className="ts-section-header">
             <h2>Tokenomics</h2>
@@ -313,6 +306,8 @@ function SonUpload() {
             </div>
           </div>
         </section>
+
+        <div className="ts-section-divider" aria-hidden="true" />
 
         <section id="how" className="ts-section">
           <div className="ts-section-header">
@@ -338,6 +333,8 @@ function SonUpload() {
           </div>
         </section>
 
+        <div className="ts-section-divider" aria-hidden="true" />
+
         <section id="community" className="ts-section ts-section-alt">
           <div className="ts-section-header">
             <h2>The TypeShii Block</h2>
@@ -361,6 +358,8 @@ function SonUpload() {
             </div>
           </div>
         </section>
+
+        <div className="ts-section-divider" aria-hidden="true" />
       </main>
 
       <footer className="ts-footer">
