@@ -134,18 +134,7 @@ function SonUpload() {
 
         <div className="ts-section-divider" aria-hidden="true" />
 
-        <div className="ts-code-ticker-wrap">
-          <div className="ts-code-ticker-inner">
-            <p className="ts-code-line">while(sleeping) &#123; type_faster(); &#125;</p>
-            <p className="ts-code-line">for(degen in alley) &#123; send_shii(degen); &#125;</p>
-            <p className="ts-code-line">burn(fiat);</p>
-            <p className="ts-code-line">for(degen in alley) &#123; send_shii(degen); &#125;</p>
-          </div>
-          <div className="ts-binary-ticker" aria-hidden="true">
-            <span className="ts-binary-chunk">01010100 01111001 01110000 01100101 01010011 01101000 01101001 01101001</span>
-            <span className="ts-binary-chunk" aria-hidden="true">01010100 01111001 01110000 01100101 01010011 01101000 01101001 01101001</span>
-          </div>
-        </div>
+     
 
         <div className="ts-section-divider" aria-hidden="true" />
 
