@@ -1230,6 +1230,42 @@
   .ts-capabilities-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ts-manifesto-grid { grid-template-columns: minmax(0, 1fr); }
   .ts-timeline-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* Disable glitch effects on mobile */
+  .ts-page::after {
+    display: none;
+  }
+  .ts-hero-title {
+    animation: ts-hack-glow 4s ease-in-out infinite;
+  }
+  .ts-hero-title::before,
+  .ts-hero-title::after {
+    display: none !important;
+  }
+  .ts-section-header h2 {
+    animation: none;
+  }
+
+  /* Falling $SHII — much lighter on mobile */
+  .ts-falling-shii {
+    opacity: 0.35;
+  }
+  .ts-falling-column:nth-child(n+7) {
+    display: none;
+  }
+  .ts-falling-column {
+    max-width: 8vw;
+  }
+  .ts-falling-item {
+    animation: none;
+    font-size: 0.6rem;
+    opacity: 0.7;
+    color: rgba(232, 228, 220, 0.5);
+    text-shadow: 0 0 8px rgba(255, 252, 245, 0.2);
+  }
+  .ts-falling-column:nth-child(odd) .ts-falling-item {
+    color: rgba(255, 252, 245, 0.4);
+  }
 }
 
 @media (max-width: 480px) {
